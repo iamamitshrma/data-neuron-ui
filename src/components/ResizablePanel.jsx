@@ -13,7 +13,7 @@ const ResizablePanel = () => {
 
   const getData = async () => {
     try {
-      const res = await fetch("http://localhost:1973/api/v1/data", {headers: {
+      const res = await fetch("https://data-neuron-api.onrender.com/api/v1/data", {headers: {
         "Content-Type": "application/json"
       }});
       const data = await res.json();
@@ -32,7 +32,7 @@ const ResizablePanel = () => {
   const updateData = async (e, id) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:1973/api/v1/data/update-data/${id}`, { method: "PATCH", body: JSON.stringify({text: updateInput}), headers: {
+      const res = await fetch(`https://data-neuron-api.onrender.com/api/v1/data/update-data/${id}`, { method: "PATCH", body: JSON.stringify({text: updateInput}), headers: {
         "Content-Type": "application/json"
       }});
       const data = await res.json();
@@ -49,7 +49,7 @@ const ResizablePanel = () => {
   const addData = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:1973/api/v1/data/add-data`, { method: "POST", body: JSON.stringify({text: input}), headers: {
+      const res = await fetch(`https://data-neuron-api.onrender.com/api/v1/data/add-data`, { method: "POST", body: JSON.stringify({text: input}), headers: {
         "Content-Type": "application/json"
       }});
       const data = await res.json();
